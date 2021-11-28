@@ -15,6 +15,8 @@ if ($itemsObj) {
         $newItems['title']        = $itemsObj[$i]->title();
         $newItems['body']         = $itemsObj[$i]->body();
         $newItems['votes']        = $itemsObj[$i]->votes();
+		$newItems['counter']        = $itemsObj[$i]->counter();
+		$newItems['comments']        = $itemsObj[$i]->comments();
         $newItems['image']        = XOOPS_URL . '/uploads/blank.gif';
         $images = $itemsObj[$i]->getImages();
         if (is_object($images['main'])) {
@@ -34,6 +36,8 @@ if ($itemsObj) {
             $GLOBALS['xoopsTpl']->assign('title', $myrow['title']);
             $GLOBALS['xoopsTpl']->assign('body', $myrow['body']);
             $GLOBALS['xoopsTpl']->assign('votes', $myrow['votes']);
+			$GLOBALS['xoopsTpl']->assign('counter', $myrow['counter']);
+			$GLOBALS['xoopsTpl']->assign('comments', $myrow['comments']);
             $GLOBALS['xoopsTpl']->assign('image', $myrow['image']);
         <{/php}>
 <div class="col-lg-4 col-md-12 col-xl-4">
@@ -46,6 +50,13 @@ if ($itemsObj) {
 					<p class="fix-max-height"><{$body|truncate:230}></p>
 					<br>
 					<a class="btn btn-primary btn-teal" href="<{$xoops_url}>/modules/publisher/item.php?itemid=<{$itemid}>">Read more</a>
+					<br>
+					Rating:<{$votes}>
+					<br>
+					Reads:<{$counter}>
+					<br>
+					Comments:<{$comments}>		
+				
 				</div>
 </div>
 </div>
