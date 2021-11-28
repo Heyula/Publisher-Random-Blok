@@ -23,3 +23,7 @@ $start = 0  : From which category (0 for all categories)
 <{$image}> = Article Image
 <br>
 <{$votes}> = Article Votes
+<br>
+<{$counter}> = Reads
+<br>
+<{$comments}> = Comments	
